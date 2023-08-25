@@ -9,7 +9,7 @@
 
 <!-- MAIN HEADING -->
 
-  <h3><b>Today's To Do</b></h3>
+  <h3><b>To Do List Add & Remove</b></h3>
 
 </div>
 
@@ -38,7 +38,7 @@
 <!-- INTRO -->
 # 📖 About Project<a name="about-project"></a>
 
-> HTML / CSS & JavaScript this project is created to get the task and list all of them.
+> HTML / CSS & JavaScript this project is created to CRUD and get the task and list all of them.
 
 ## 🛠 Built With <a name="built-with"></a>
 1. HTML 5
