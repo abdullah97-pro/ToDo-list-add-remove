@@ -95,7 +95,7 @@ Clone this repository to your desired folder using:
 
 ```sh
   cd my-folder
-  git clone https://github.com/abdullah97-pro/todays_to_do/tree/addTodaytodo
+  git clone https://github.com/abdullah97-pro/ToDo-list-add-remove/tree/addTodoListAddRemove
 ```
 <!-- INSTALL -->
 
@@ -103,7 +103,7 @@ Clone this repository to your desired folder using:
 
 Make sure you install this project with the latest version of Git and a code editor (VSCode is good).
 ```sh
-    cd todays_to_do
+    cd todo-list-add-remove
     npm install
     npm install webpack --save-dev
     npm install webpack-cli --save-dev
