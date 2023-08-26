@@ -39,32 +39,32 @@ export function renderTasks() {
     listItem.appendChild(deleteButton);
 
     listItem.addEventListener('dragstart', (event) => {
-        event.dataTransfer.setData('text/plain', index);
-      });
-  
-      listItem.addEventListener('dragover', (event) => {
-        event.preventDefault();
-      });
-  
-      listItem.addEventListener('drop', (event) => {
-        event.preventDefault();
-        const sourceIndex = event.dataTransfer.getData('text/plain');
-        const targetIndex = index;
-        swapTasks(sourceIndex, targetIndex);
-      });
-  
-      taskList.appendChild(listItem);
+      event.dataTransfer.setData('text/plain', index);
     });
+
+    listItem.addEventListener('dragover', (event) => {
+      event.preventDefault();
+    });
+
+    listItem.addEventListener('drop', (event) => {
+      event.preventDefault();
+      const sourceIndex = event.dataTransfer.getData('text/plain');
+      const targetIndex = index;
+      swapTasks(sourceIndex, targetIndex);
+    });
+
+    taskList.appendChild(listItem);
+  });
 }
 
 function swapTasks(sourceIndex, targetIndex) {
-    const sourceTask = tasks[sourceIndex];
-    const targetTask = tasks[targetIndex];
-    tasks[sourceIndex] = targetTask;
-    tasks[targetIndex] = sourceTask;
-    saveTasks();
-    renderTasks();
-  }
+  const sourceTask = tasks[sourceIndex];
+  const targetTask = tasks[targetIndex];
+  tasks[sourceIndex] = targetTask;
+  tasks[targetIndex] = sourceTask;
+  saveTasks();
+  renderTasks();
+}
 
 export function addTask(description) {
   const newTask = {
