@@ -9,7 +9,7 @@
 
 <!-- MAIN HEADING -->
 
-  <h3><b>To Do List Add & Remove</b></h3>
+  <h3><b>Today's To Do</b></h3>
 
 </div>
 
@@ -38,7 +38,7 @@
 <!-- INTRO -->
 # 📖 About Project<a name="about-project"></a>
 
-> HTML / CSS & JavaScript this project is created to CRUD and get the task and list all of them.
+> HTML / CSS & JavaScript this project is created to get the task and list all of them.
 
 ## 🛠 Built With <a name="built-with"></a>
 1. HTML 5
@@ -95,7 +95,7 @@ Clone this repository to your desired folder using:
 
 ```sh
   cd my-folder
-  git clone https://github.com/abdullah97-pro/ToDo-list-add-remove/tree/addTodoListAddRemove
+  git clone https://github.com/abdullah97-pro/todays_to_do/tree/addTodaytodo
 ```
 <!-- INSTALL -->
 
@@ -103,7 +103,7 @@ Clone this repository to your desired folder using:
 
 Make sure you install this project with the latest version of Git and a code editor (VSCode is good).
 ```sh
-    cd todo-list-add-remove
+    cd todays_to_do
     npm install
     npm install webpack --save-dev
     npm install webpack-cli --save-dev

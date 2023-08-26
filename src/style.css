@@ -32,7 +32,6 @@ body {
 i {
   font-size: 14px;
   color: #a39a9a;
-  cursor: all-scroll;
 }
 
 .container h1 i {
@@ -48,7 +47,7 @@ input#task-input {
   font-style: italic;
 }
 
-.btn {
+#add-task-btn {
   position: absolute;
   right: 0;
   top: 50px;
@@ -56,6 +55,40 @@ input#task-input {
   border: none;
   color: #5f5252;
   padding: 0 10px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  color: #5f5252;
+  padding: 0 10px;
+  display: inline-block;
+  cursor: progress;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  color: #5f5252;
+  margin: 0 20px 0 0;
+  padding: 0 10px 0 10px;
+  display: none;
+  cursor: pointer;
+}
+
+.delete-btn::before {
+  content: '🗑';
+  color: #000;
+  font-size: 18px;
+}
+
+li:hover .delete-btn {
+  display: initial;
 }
 
 li {
@@ -63,14 +96,16 @@ li {
   padding: 10px 10px;
   list-style: none;
   border: 1px solid #eee;
+  cursor: all-scroll;
 }
 
-label {
+span.task-description {
+  width: 100%;
   padding: 0 12px;
   color: #5f5252;
 }
 
-.btn-remove {
+#clear-completed-btn {
   width: 100%;
   padding: 15px;
   text-align: center;
