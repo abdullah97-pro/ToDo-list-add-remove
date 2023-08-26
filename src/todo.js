@@ -1,76 +1,3 @@
-// let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-
-// export function renderTasks() {
-//   const taskList = document.getElementById('task-list');
-//   taskList.innerHTML = '';
-
-//   tasks.forEach((task, index) => {
-//     const listItem = document.createElement('li');
-
-//     const checkBox = document.createElement('input');
-//     checkBox.type = 'checkbox';
-//     checkBox.checked = task.completed;
-//     checkBox.dataset.index = index;
-//     listItem.appendChild(checkBox);
-
-//     const taskDescription = document.createElement('span');
-//     taskDescription.textContent = task.description;
-//     if (task.completed) {
-//       taskDescription.classList.add('completed');
-//     }
-//     listItem.appendChild(taskDescription);
-
-//     const deleteButton = document.createElement('button');
-//     deleteButton.textContent = 'Delete';
-//     deleteButton.className = 'delete-btn';
-//     deleteButton.dataset.index = index;
-//     listItem.appendChild(deleteButton);
-
-//     taskList.appendChild(listItem);
-//   });
-// }
-
-// export function addTask(description) {
-//   const newTask = {
-//     description,
-//     completed: false,
-//   };
-
-//   tasks.push(newTask);
-//   saveTasks();
-//   renderTasks();
-// }
-
-// export function deleteTask(index) {
-//   tasks.splice(index, 1);
-//   saveTasks();
-//   renderTasks();
-// }
-
-// export function toggleTaskCompletion(index) {
-//   tasks[index].completed = !tasks[index].completed;
-//   saveTasks();
-//   renderTasks();
-// }
-
-// function saveTasks() {
-//   localStorage.setItem('tasks', JSON.stringify(tasks));
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 export function renderTasks() {
@@ -110,10 +37,6 @@ export function renderTasks() {
     deleteButton.className = 'delete-btn';
     deleteButton.dataset.index = index;
     listItem.appendChild(deleteButton);
-
-    // const deleteIcon = document.createElement('i');
-    // deleteIcon.className = 'fas fa-trash';
-    // deleteButton.appendChild(deleteIcon);
 
     listItem.addEventListener('dragstart', (event) => {
         event.dataTransfer.setData('text/plain', index);
