@@ -1,3 +1,5 @@
+import { reset } from "ansi-colors";
+
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 export function renderTasks() {
@@ -39,32 +41,39 @@ export function renderTasks() {
     listItem.appendChild(deleteButton);
 
     listItem.addEventListener('dragstart', (event) => {
-      event.dataTransfer.setData('text/plain', index);
-    });
+        event.dataTransfer.setData('text/plain', index);
+      });
+  
+      listItem.addEventListener('dragover', (event) => {
+        event.preventDefault();
+      });
+  
+      listItem.addEventListener('drop', (event) => {
+        event.preventDefault();
+        const sourceIndex = event.dataTransfer.getData('text/plain');
+        const targetIndex = index;
+        swapTasks(sourceIndex, targetIndex);
+      });
 
-    listItem.addEventListener('dragover', (event) => {
-      event.preventDefault();
+      checkBox.addEventListener('click', (event) => {
+        const index = event.target.dataset.index;
+        tasks[index].completed = tasks[index].completed;
+        saveTasks();
+        renderTasks();
+      });
+  
+      taskList.appendChild(listItem);
     });
-
-    listItem.addEventListener('drop', (event) => {
-      event.preventDefault();
-      const sourceIndex = event.dataTransfer.getData('text/plain');
-      const targetIndex = index;
-      swapTasks(sourceIndex, targetIndex);
-    });
-
-    taskList.appendChild(listItem);
-  });
 }
 
 function swapTasks(sourceIndex, targetIndex) {
-  const sourceTask = tasks[sourceIndex];
-  const targetTask = tasks[targetIndex];
-  tasks[sourceIndex] = targetTask;
-  tasks[targetIndex] = sourceTask;
-  saveTasks();
-  renderTasks();
-}
+    const sourceTask = tasks[sourceIndex];
+    const targetTask = tasks[targetIndex];
+    tasks[sourceIndex] = targetTask;
+    tasks[targetIndex] = sourceTask;
+    saveTasks();
+    renderTasks();
+  }
 
 export function addTask(description) {
   const newTask = {
@@ -78,15 +87,19 @@ export function addTask(description) {
 }
 
 export function deleteTask(index) {
-  tasks.splice(index, 1);
-  saveTasks();
-  renderTasks();
+  if (tasks[index]) {
+    tasks.splice(index, 1);
+    saveTasks();
+    renderTasks();
+  }
 }
 
 export function toggleTaskCompletion(index) {
-  tasks[index].completed = !tasks[index].completed;
-  saveTasks();
-  renderTasks();
+  if (tasks[index]) {
+    tasks[index].completed = !tasks[index].completed;
+    saveTasks();
+    renderTasks();
+  }
 }
 
 export function editTask(index, newDescription) {
@@ -96,7 +109,7 @@ export function editTask(index, newDescription) {
 }
 
 export function clearCompletedTasks() {
-  tasks = tasks.filter((task) => !task.completed);
+  tasks = tasks.filter(task => !task.completed);
   saveTasks();
   renderTasks();
 }
