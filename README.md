@@ -9,7 +9,7 @@
 
 <!-- MAIN HEADING -->
 
-  <h3><b>Today's To Do</b></h3>
+  <h3><b>To Do List Add & Remove</b></h3>
 
 </div>
 
@@ -38,7 +38,7 @@
 <!-- INTRO -->
 # 📖 About Project<a name="about-project"></a>
 
-> HTML / CSS & JavaScript this project is created to get the task and list all of them.
+> HTML / CSS & JavaScript this project is created to get the task and list all of them with the features of add , edit and remove. Also you can drag and drop the lists data value.
 
 ## 🛠 Built With <a name="built-with"></a>
 1. HTML 5
@@ -95,7 +95,7 @@ Clone this repository to your desired folder using:
 
 ```sh
   cd my-folder
-  git clone https://github.com/abdullah97-pro/todays_to_do/tree/addTodaytodo
+  git clone https://github.com/abdullah97-pro/ToDo-list-add-remove/tree/addTodoListAddRemove
 ```
 <!-- INSTALL -->
 
